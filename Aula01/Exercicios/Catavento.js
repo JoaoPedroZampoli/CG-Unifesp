@@ -74,8 +74,8 @@ function figureColors4(red, green, blue, alpha, figureSides){
 
 function stemVertices4(){
     return new Float32Array([
-        -0.025, -0.7,
-        0.025, -0.7,
+        -0.025, -0.9,
+        0.025, -0.9,
         0.025, -0.1,
         -0.025, -0.1
     ]);
