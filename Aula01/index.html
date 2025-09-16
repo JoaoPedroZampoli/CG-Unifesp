@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <title>Teste com Primitivos de WebGL</title>
+        <style>
+            body{
+                margin: 20px; /*Provavelmente mudar*/
+                padding: 0;
+                background-color: white;
+                justify-content: center;
+                margin: auto;
+                font-family: "system-ui";
+            }
+            h1{
+                text-align: center;
+            }
+            table{
+                border: 2px solid black;
+                margin: auto;
+                border-radius: 12px;
+            }
+            td{
+                border: 1px solid black;
+                border-radius: 10px;
+                padding: 10px;
+                vertical-align: top;
+                background-color: #f9f9f9;
+            }
+            h3{
+                margin-top: 0;
+                margin-bottom: 10px;
+                color: #232323;
+                font-size: 16px;
+                text-align: center;
+            }
+            canvas{
+                border: 1px solid #999;
+                border-radius: 10px;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Exemplos de Formas Primitivas no WebGL</h1>
+        <table>
+            <tr>
+                <td>
+                    <h3>GL_TRIANGLES</h3>
+                    <canvas id="glCanvas1" width="300" height="300"></canvas>
+                </td>
+                <td>
+                    <h3>GL_TRIANGLE (multi-color)</h3>
+                    <canvas id="glCanvas2" width="300" height="300"></canvas>
+                </td>
+                <td>
+                    <h3>GL_TRIANGLES (Random Color Square)</h3>
+                    <canvas id="glCanvas3" width="300" height="300"></canvas>
+                </td>
+                <td>
+                    <h3>GL_TRIANGLES (Two Squares)</h3>
+                    <canvas id="glCanvas4" width="300" height="300"></canvas>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>GL_TRIANGLE_FAN (Pentagon)</h3>
+                    <canvas id="glCanvas5" width="300" height="300"></canvas>
+                </td>
+                <td>
+                    <h3>GL_TRIANGLE_STRIP (Wavy Ribbon)</h3>
+                    <canvas id="glCanvas6" width="300" height="300"></canvas>
+                </td>
+                <td>
+                    <h3>GL_LINES (Separate Lines)</h3>
+                    <canvas id="glCanvas7" width="300" height="300"></canvas>
+                </td>
+                <td>
+                    <h3>GL_LINES (Connected Lines)</h3>
+                    <canvas id="glCanvas8" width="300" height="300"></canvas>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>GL_LINE_LOOP (Closed Shape)</h3>
+                    <canvas id="glCanvas9" width="300" height="300"></canvas>
+                </td>
+                <td>
+                    <h3>GL_POINTS (Different Sizes)</h3>
+                    <canvas id="glCanvas10" width="300" height="300"></canvas>
+                </td>
+            </tr>
+        </table>
+        <script src="triangle1.js"></script>
+        <script src="triangle2.js"></script>
+        <script src="square1.js"></script>
+        <script src="square2.js"></script>
+        <script src="triangleFan.js"></script>
+        <script src="triangleStrip.js"></script>
+        <script src="lines.js"></script>
+        <script src="lineStrip.js"></script>
+        <script src="lineLoop.js"></script>
+        <script src="points.js"></script>
+    </body>
+</html>
