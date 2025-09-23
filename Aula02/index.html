@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primitivas de WebGL com interação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body{
+        margin: 20px; /*Provavelmente mudar*/
+        padding: 0;
+        background-color: white;
+        justify-content: center;
+        margin: auto;
+        font-family: "system-ui";
+    }
+    h1{
+        text-align: center;
+    }
+    .container{
+        border: 2px solid black;
+        border-radius: 10px;
+        text-align: center;
+        padding: 10px;
+        margin: auto;
+        width: 50%;
+        background-color: #fdfdfd;
+    }
+</style>
+<body>
+    <h1>Primitivas de WebGL com interação</h1>
+    <div class="container">
+        <h3>Instruções:</h3>
+        <ul style="text-align: left;">
+            <li>Clique com o mouse em qualquer área do quadro para desenhar um ponto</li>
+            <li>Use a tecla "E" para alterar a espessura deste ponto</li>
+            <li>Use a tecla "K" para alterar a cor do ponto de maneira aleatória</li>
+            <li>Use a tecla "R" para traçar uma linha ao clicar em dois pontos</li>
+            <li>Use a tecla "T" para desenhar um triângulo ao clicar em três pontos</li>
+            <li>Use a tecla "C" para desenhar circunferências (clique para o centro)</li>
+        </ul>
+        <canvas id="glCanvas" width="500" height="500" style="border: 1px solid #000;"></canvas>
+    </div>
+</body>
+<script src="KeyboardMouseInteraction.js"></script>
+</html>
