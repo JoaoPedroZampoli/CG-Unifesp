@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Lexend:wght@100..900&family=Readex+Pro:wght@160..700&display=swap');
+
+html{
+    background-color: black;
+    font-family: "Jersey 15", sans-serif;
+    margin: 0;
+    color: white;
+    padding: 12px;
+}
+
+.title-container{
+    text-align: center;
+    margin: 0;
+}
+
+.placar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 2em;
+    margin: auto;
+    margin-bottom: 24px;
+}
+
+.players{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+h1{
+    font-size: 4em;
+    margin: 0;
+}
