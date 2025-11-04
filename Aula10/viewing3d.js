@@ -153,6 +153,13 @@ function main() {
         return;
     }
 
+    const displayWidth = canvas.clientWidth;
+    const displayHeight = canvas.clientHeight;
+    const pixelRatio = window.devicePixelRatio || 1;
+
+    canvas.width = displayWidth * pixelRatio;
+    canvas.height = displayHeight * pixelRatio;
+
     const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
     const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
 
@@ -199,7 +206,7 @@ function main() {
     let z_near = -1.0;
     let z_far = -8.0;
     let projectionMatrix = m4.setOrthographicProjectionMatrix(xw_min,xw_max,yw_min,yw_max,z_near,z_far);
-    let projectionType = 'Ortográfica'; // ADICIONE ESTA LINHA
+    let projectionType = 'Ortográfica';
 
     let theta = 0.0;
     let tx = 0.0;
