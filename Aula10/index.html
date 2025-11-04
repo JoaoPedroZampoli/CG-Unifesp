@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Viewing</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto 0 auto;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border: 2px solid #4a90e2;
+            border-radius: 8px;
+        }
+        .container h2 {
+            color: #2c5aa0;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .container-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .instruction-section {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .instruction-section h3 {
+            color: #4a90e2;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 5px;
+        }
+        .instruction-item {
+            display: flex;
+            margin: 8px 0;
+            align-items: center;
+        }
+        .key {
+            background-color: #2c5aa0;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+            margin-right: 10px;
+            font-family: 'Courier New', monospace;
+        }
+        .description {
+            color: #333;
+            font-size: 14px;
+        }
+        .current-mode {
+            background-color: #fffacd;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+            border: 1px solid #ffd700;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            border: 2px solid #ddd;
+        }
+        td {
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #f9f9f9;
+        }
+        canvas {
+            border: 1px solid #999;
+            background-color: black;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>3D Viewing - Sistema de Câmera Interativo</h1>
+    
+    <table class="container">
+        <tr>
+            <td>
+                <canvas id="glCanvas" width="1000" height="562"></canvas>
+            </td>
+        </tr>
+    </table>
+
+    <div class="container">
+        <h2>📋 Instruções de Controle</h2>
+        
+        <div class="container-grid">
+            <div class="instruction-section">
+                <h3>🎥 Modos de Visualização (Teclas 0-7)</h3>
+                <div class="instruction-item">
+                    <span class="key">0</span>
+                    <span class="description">Vista Isométrica Padrão</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">1</span>
+                    <span class="description">Vista Frontal (Eixo Z)</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">2</span>
+                    <span class="description">Vista Lateral Direita (Eixo X)</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">3</span>
+                    <span class="description">Vista Superior (Eixo Y)</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">4</span>
+                    <span class="description">Vista Lateral Esquerda (-X)</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">5</span>
+                    <span class="description">Vista Traseira (-Z)</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">6</span>
+                    <span class="description">Pan Animado (Câmera Girando)</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">7</span>
+                    <span class="description">Rotação ao Redor do Objeto</span>
+                </div>
+            </div>
+            
+            <div class="instruction-section">
+                <h3>📐 Tipos de Projeção</h3>
+                <div class="instruction-item">
+                    <span class="key">O</span>
+                    <span class="description">Projeção Ortográfica (Paralela)</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">P</span>
+                    <span class="description">Projeção Perspectiva (Cônica)</span>
+                </div>
+                
+                <div style="margin-top: 20px; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
+                    <strong>💡 Dicas:</strong>
+                    <ul style="text-align: left; margin: 10px 0 0 0; padding-left: 20px; font-size: 13px;">
+                        <li>O cubo rotaciona e se move automaticamente</li>
+                        <li>Os eixos coordenados são exibidos em vermelho</li>
+                        <li>Modos 6 e 7 possuem animação contínua</li>
+                        <li>Alterne entre projeções para ver diferenças</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="current-mode" id="currentMode">
+            Modo Atual: Vista Isométrica Padrão | Projeção: Ortográfica
+        </div>
+    </div>
+
+    <!-- Load all JavaScript files -->
+    <script src="m4.js"></script>
+    <script src="viewing3d.js"></script>
+</body>
+</html>
